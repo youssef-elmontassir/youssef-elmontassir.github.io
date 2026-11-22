@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Youssef El Montassir — Marketing Digital &amp; Stratégies E-commerce</title>
+<meta name="description" content="Portfolio de Youssef El Montassir : Master Marketing Digital & Stratégies E-commerce, développement web, automatisation IA (n8n, Firebase, Python) et e-commerce.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3d33'/%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-size='30' font-weight='700' fill='%23f2f0e9' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16211d; --ink-soft:#3d4a44; --muted:#657068;
+  --paper:#f2f0e9; --paper-2:#e7e3d8; --card:#fbfaf6;
+  --pine:#0f3d33; --pine-2:#1d5c4c; --teal:#2f7d6b;
+  --saffron:#d99a2b; --line:rgba(22,33,29,.14); --line-strong:rgba(22,33,29,.28);
+  --radius:14px;
+  --shadow:0 18px 40px -24px rgba(15,61,51,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:"Space Grotesk","IBM Plex Sans",system-ui,sans-serif;line-height:1.12;letter-spacing:-.01em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+::selection{background:var(--saffron);color:var(--ink)}
+.wrap,.hero-grid,.about-grid,.proj-feature,.skill-grid,.foot-links,.tl-row,.proj-row{min-width:0}
+.hero-copy,.hero-media,.about-text,.fact-list,.pf-copy,.pf-visual,.tl-body,.proj-row>div{min-width:0}
+p,dd,li{overflow-wrap:break-word}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 28px}
+img,video{max-width:100%}
+.stats,.pf-stats,.sec-head{min-width:0}
+.stat,.pf-stats>div,.sec-title{min-width:0;overflow-wrap:break-word}
+
+/* ---------- navigation ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(242,240,233,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;gap:22px;height:64px;max-width:1120px;margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Space Grotesk",sans-serif;font-weight:600}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--pine);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:15px;letter-spacing:.02em}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.04em}
+.nav-links{display:flex;gap:20px;margin-left:auto;font-size:14px;color:var(--ink-soft)}
+.nav-links a{padding:6px 2px;border-bottom:1px solid transparent}
+.nav-links a:hover{color:var(--pine);border-color:var(--teal)}
+.lang-toggle{border:1px solid var(--line-strong);background:transparent;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--pine)}
+.lang-toggle:hover{background:var(--pine);color:var(--paper)}
+.nav-cta{background:var(--pine);color:var(--paper);border:none;border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600}
+.nav-cta:hover{background:var(--pine-2)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 56px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.kicker{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--pine-2);font-weight:600;letter-spacing:.05em;margin-bottom:22px}
+.kicker::before{content:"";width:34px;height:2px;background:var(--saffron)}
+.hero h1{font-size:clamp(30px,5.2vw,58px);font-weight:700;overflow-wrap:break-word}
+.hero h1 .accent{color:var(--pine)}
+.hero .role-line{margin-top:14px;font-size:clamp(16px,2vw,21px);color:var(--ink-soft);font-weight:500;max-width:34em}
+.lead{margin-top:20px;color:var(--muted);font-size:15.5px;max-width:40em}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.chip{border:1px solid var(--line-strong);background:var(--card);border-radius:999px;padding:7px 15px;font-size:13px;color:var(--ink-soft);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 24px;font-weight:600;font-size:14.5px;border:1px solid transparent}
+.btn-primary{background:var(--pine);color:var(--paper)}
+.btn-primary:hover{background:var(--pine-2)}
+.btn-ghost{border-color:var(--line-strong);background:transparent;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--pine);color:var(--pine)}
+.btn svg{width:16px;height:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;border-top:1px solid var(--line);padding-top:24px}
+.stat b{display:block;font-family:"Space Grotesk",sans-serif;font-size:26px;color:var(--pine)}
+.stat span{font-size:12.5px;color:var(--muted)}
+.hero-media{position:relative}
+.avatar-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-strong);background:var(--paper-2);box-shadow:var(--shadow)}
+.avatar-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center}
+.ring-deco{position:absolute;inset:-22px;border:1.5px dashed rgba(15,61,51,.3);border-radius:28px;z-index:-1}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-media{max-width:380px}}
+@media(max-width:640px){
+  .nav-inner{gap:10px;height:58px}
+  .brand>span{display:none}
+  .nav-cta{padding:8px 12px;font-size:12px}
+  .lang-toggle{padding:6px 10px;font-size:12px}
+  .fact{grid-template-columns:92px 1fr}
+  .sec{padding:52px 0}
+  .proj-feature .pf-copy{padding:28px 22px}
+  .foot-links{gap:12px}
+}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--pine);color:var(--paper);overflow:hidden;padding:15px 0}
+.marquee-track{display:flex;gap:38px;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+.marquee-track span{font-family:"Space Grotesk",sans-serif;font-size:14px;letter-spacing:.06em;opacity:.92}
+.marquee-track i{color:var(--saffron);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.sec{padding:70px 0}
+.sec-head{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:baseline;margin-bottom:38px}
+.sec-index{font-family:"Space Grotesk",sans-serif;font-weight:600;color:var(--saffron);font-size:14px}
+.sec-title{font-size:clamp(24px,3vw,32px);font-weight:700}
+.sec-note{font-size:13px;color:var(--muted);max-width:26em;text-align:right}
+.sec-head .rule{grid-column:1/-1;height:1px;background:var(--line-strong);margin-top:6px}
+@media(max-width:700px){.sec-note{display:none}.sec-head{grid-template-columns:auto 1fr}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px}
+.about-text p{margin-bottom:15px;color:var(--ink-soft);font-size:15.5px}
+.about-text p strong{color:var(--ink)}
+.fact-list{border:1px solid var(--line-strong);border-radius:var(--radius);background:var(--card);padding:26px}
+.fact{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
+.fact:last-child{border-bottom:0}
+.fact dt{color:var(--muted);font-weight:600;font-size:12.5px;letter-spacing:.03em}
+.fact dd{color:var(--ink)}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- timeline ---------- */
+.tl{display:grid;gap:0}
+.tl-row{display:grid;grid-template-columns:150px 34px 1fr;gap:0;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}
+.tl-row:last-child{border-bottom:0}
+.tl-time{font-size:13px;color:var(--muted);font-weight:600;padding-top:3px}
+.tl-axis{position:relative;display:grid;place-items:center;align-self:stretch}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--saffron);border:3px solid var(--paper);box-shadow:0 0 0 1.5px var(--pine);z-index:1}
+.tl-axis::before{content:"";position:absolute;top:14px;bottom:-26px;width:1.5px;background:var(--line-strong)}
+.tl-row:last-child .tl-axis::before{display:none}
+.tl-body h3{font-size:17px}
+.tl-body .org{color:var(--pine-2);font-weight:600;font-size:14px;margin:2px 0 8px}
+.tl-body ul{list-style:none;margin-top:8px;display:grid;gap:7px}
+.tl-body li{position:relative;padding-left:18px;color:var(--ink-soft);font-size:14.5px}
+.tl-body li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.tl-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+@media(max-width:700px){.tl-row{grid-template-columns:92px 26px 1fr}.tl-time{font-size:11.5px}}
+
+/* ---------- projects ---------- */
+.proj-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:var(--pine);color:var(--paper);border-radius:var(--radius);overflow:hidden;margin-bottom:26px}
+.proj-feature .pf-copy{padding:40px 38px}
+.pf-kicker{font-size:12px;letter-spacing:.09em;color:var(--saffron);font-weight:600;margin-bottom:14px}
+.proj-feature h3{font-size:25px;margin-bottom:14px}
+.proj-feature p{color:rgba(242,240,233,.82);font-size:14.5px;margin-bottom:14px}
+.proj-feature .tags{margin-top:18px}
+.tag{display:inline-block;border:1px solid rgba(242,240,233,.28);border-radius:999px;padding:5px 13px;font-size:12px;color:rgba(242,240,233,.9)}
+.pf-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;border-top:1px solid rgba(242,240,233,.2);padding-top:20px}
+.pf-stats b{display:block;font-family:"Space Grotesk",sans-serif;font-size:22px;color:var(--saffron)}
+.pf-stats span{font-size:11.5px;color:rgba(242,240,233,.75)}
+.pf-note{margin:16px 0 2px;font-size:13px;line-height:1.55;color:rgba(242,240,233,.74)}
+.pf-visual{padding:34px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#123f35,#0c2e27)}
+.phone{width:250px;background:#0b241f;border:1px solid rgba(242,240,233,.25);border-radius:26px;padding:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.phone-bar{display:flex;justify-content:space-between;font-size:10px;color:rgba(242,240,233,.6);padding:2px 6px 10px}
+.phone-screen{background:var(--card);border-radius:16px;padding:14px;color:var(--ink)}
+.phone-screen h4{font-size:13px;color:var(--pine);margin-bottom:10px}
+.ps-row{display:flex;justify-content:space-between;align-items:center;background:var(--paper-2);border-radius:10px;padding:8px 10px;margin-bottom:7px;font-size:11px}
+.ps-row .st{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;background:#dff0e9;color:var(--pine-2)}
+.ps-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.ps-slots i{font-style:normal;font-size:10px;text-align:center;padding:6px 0;border-radius:8px;background:#eef3ef;color:var(--ink-soft)}
+.ps-slots i.on{background:var(--pine);color:var(--paper)}
+@media(max-width:880px){.proj-feature{grid-template-columns:1fr}.pf-visual{order:-1;padding:28px}}
+
+.proj-row{display:grid;grid-template-columns:220px 1fr auto;gap:26px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}
+.proj-row:last-of-type{border-bottom:0}
+.proj-thumb{border-radius:12px;border:1px solid var(--line);background:var(--card);overflow:hidden;aspect-ratio:16/10}
+.proj-thumb img{width:100%;height:100%;object-fit:cover}
+.proj-row h3{font-size:17px;margin-bottom:8px}
+.proj-row p{color:var(--ink-soft);font-size:14px;margin-bottom:12px;max-width:52em}
+.proj-meta{text-align:right;font-size:12.5px;color:var(--muted);min-width:150px}
+.proj-meta b{display:block;font-family:"Space Grotesk",sans-serif;font-size:18px;color:var(--pine)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.proj-row.no-thumb{grid-template-columns:1fr auto}
+@media(max-width:820px){.proj-row.no-thumb{grid-template-columns:1fr}}
+.proj-link{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:13px;font-weight:600;color:var(--saffron)}
+.proj-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.tag.dark{border-color:var(--line-strong);color:var(--ink-soft)}
+@media(max-width:820px){.proj-row{grid-template-columns:1fr}.proj-meta{text-align:left}.proj-thumb{max-width:340px}}
+
+/* ---------- skills ---------- */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.skill-group{border:1px solid var(--line-strong);border-radius:var(--radius);background:var(--card);padding:24px 26px}
+.skill-group h3{font-size:15px;margin-bottom:16px;color:var(--pine)}
+.skill-group .tags{gap:8px}
+.certs{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.cert{border:1px solid var(--line-strong);border-radius:10px;padding:10px 16px;font-size:13px;background:var(--card)}
+.cert b{color:var(--pine)}
+@media(max-width:820px){.skill-grid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.foot{background:var(--pine);color:var(--paper);padding:66px 0 34px;margin-top:40px}
+.foot h2{font-size:clamp(26px,3.6vw,40px);margin:14px 0 16px;color:var(--paper)}
+.foot .lead{color:rgba(242,240,233,.78);max-width:38em}
+.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+.foot-link{border:1px solid rgba(242,240,233,.25);border-radius:var(--radius);padding:22px;display:block}
+.foot-link svg{width:20px;height:20px;fill:none;stroke:var(--saffron);stroke-width:1.8;margin-bottom:12px}
+.foot-link b{display:block;font-size:15px}
+.foot-link span{font-size:13px;color:rgba(242,240,233,.72);word-break:break-word}
+.foot-base{display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(242,240,233,.2);padding-top:22px;font-size:12.5px;color:rgba(242,240,233,.65);flex-wrap:wrap}
+@media(max-width:820px){.foot-links{grid-template-columns:1fr}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">YE</span>
+      <span>Youssef El Montassir<small data-fr="Marketing Digital · Automatisation IA · Web" data-en="Digital Marketing · AI Automation · Web"></small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#apropos" data-fr="Profil" data-en="About"></a>
+      <a href="#experience" data-fr="Expériences" data-en="Experience"></a>
+      <a href="#projets" data-fr="Projets" data-en="Projects"></a>
+      <a href="#competences" data-fr="Compétences" data-en="Skills"></a>
+    </div>
+    <button class="lang-toggle" id="langToggle" type="button">EN</button>
+    <a class="nav-cta" href="#contact" data-fr="Me contacter" data-en="Contact me"></a>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kicker" data-fr="Casablanca · Maroc — ouvert au Maroc et à l'international" data-en="Casablanca · Morocco — open to Morocco and international roles"></div>
+      <h1>Youssef <span class="accent">El Montassir</span></h1>
+      <p class="role-line" data-fr="Étudiant en Master Marketing Digital & Stratégies E-commerce, développeur web et automatisation IA : je relie la stratégie acquisition, les campagnes paid media et des produits web automatisés." data-en="Master's student in Digital Marketing & E-commerce Strategies, web developer and AI automation builder: I connect acquisition strategy, paid media campaigns and automated web products."></p>
+      <p class="lead" data-fr="Des campagnes Meta Ads et Google Ads à la plateforme de réservation Firebase Mon Rendez-vous, en passant par les automations n8n avec LLMs locaux : je passe du brief marketing à un produit fonctionnel, mesuré et suivi." data-en="From Meta and Google Ads campaigns to the Firebase booking platform Mon Rendez-vous, through n8n automations with local LLMs: I take a marketing brief to a working, measured, tracked product."></p>
+      <div class="chips">
+        <span class="chip" data-fr="Développement web & automatisation" data-en="Web development & automation"></span>
+        <span class="chip" data-fr="Marketing digital & paid media" data-en="Digital marketing & paid media"></span>
+        <span class="chip" data-fr="E-commerce & Shopify" data-en="E-commerce & Shopify"></span>
+        <span class="chip" data-fr="IA locale & LLMs (n8n, Ollama)" data-en="Local AI & LLMs (n8n, Ollama)"></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+          <span data-fr="Contacter" data-en="Contact"></span>
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/youssef-el-montassir-ab5145276" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14H.2V8zm7.6 0h4.4v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V22h-4.6v-6.6c0-1.6 0-3.6-2.2-3.6s-2.6 1.7-2.6 3.5V22H7.8V8z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>13</b><span data-fr="ventes fermes chez Auto Hall (CRM Odoo / HubSpot)" data-en="closed sales at Auto Hall (Odoo / HubSpot CRM)"></span></div>
+        <div class="stat"><b>47</b><span data-fr="tests automatisés sur la plateforme Mon Rendez-vous" data-en="automated tests on the Mon Rendez-vous platform"></span></div>
+        <div class="stat"><b>100k</b><span data-fr="impressions générées en campagnes Meta Ads" data-en="impressions generated in Meta Ads campaigns"></span></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="ring-deco" aria-hidden="true"></div>
+      <div class="avatar-frame">
+        <img src="assets/avatar.png" alt="Portrait de Youssef El Montassir">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>n8n <i>✦</i></span><span>Firebase <i>✦</i></span><span>Python / FastAPI <i>✦</i></span><span>Meta Ads <i>✦</i></span><span>Google Ads <i>✦</i></span><span>Cloud Firestore <i>✦</i></span><span>Shopify <i>✦</i></span><span>WordPress <i>✦</i></span><span>Docker <i>✦</i></span><span>Ollama / Qwen3 <i>✦</i></span><span>Brevo <i>✦</i></span><span>Capacitor <i>✦</i></span>
+    <span>n8n <i>✦</i></span><span>Firebase <i>✦</i></span><span>Python / FastAPI <i>✦</i></span><span>Meta Ads <i>✦</i></span><span>Google Ads <i>✦</i></span><span>Cloud Firestore <i>✦</i></span><span>Shopify <i>✦</i></span><span>WordPress <i>✦</i></span><span>Docker <i>✦</i></span><span>Ollama / Qwen3 <i>✦</i></span><span>Brevo <i>✦</i></span><span>Capacitor <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ===== About ===== -->
+<section class="sec" id="apropos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-index">01</span>
+      <h2 class="sec-title" data-fr="Profil" data-en="About"></h2>
+      <span class="sec-note" data-fr="Marketing, technique et création : trois langues que je parle au quotidien." data-en="Marketing, engineering and creative: three languages I work in daily."></span>
+      <span class="rule"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-fr="Étudiant en Master Marketing Digital & Stratégies E-commerce à la FSJES de l'Université Moulay Ismail (Meknès), j'associe une culture marketing commerciale à une pratique technique du produit web et de l'automatisation." data-en="A Master student in Digital Marketing & E-commerce Strategies at FSJES, Moulay Ismail University (Meknes), I pair a commercial marketing background with hands-on web product and automation work."></p>
+        <p data-fr="Côté marketing : campagnes Meta Ads et Google Ads, suivi GA4, CRM (HubSpot, Odoo), boutiques Shopify et sites WordPress. Côté technique : applications web Firebase, automations n8n avec LLMs locaux (Qwen3 / Ollama), API Python / FastAPI et conteneurs Docker." data-en="On the marketing side: Meta and Google Ads campaigns, GA4 tracking, CRM (HubSpot, Odoo), Shopify stores and WordPress sites. On the technical side: Firebase web apps, n8n automations with local LLMs (Qwen3 / Ollama), Python / FastAPI APIs and Docker containers."></p>
+        <p data-fr="Côté produit : conception de plateformes utiles, règles de sécurité par rôle, tests automatisés et boucles de notification automatisées (emails, webhooks). Mon objectif : transformer un brief business en produit livrable, mesuré et prêt à lancer." data-en="On the product side: useful platforms with role-based security rules, automated tests and notification loops (emails, webhooks). My goal: turn a business brief into a shippable, measured, launch-ready product."></p>
+      </div>
+      <dl class="fact-list reveal">
+        <div class="fact"><dt data-fr="Localisation" data-en="Location"></dt><dd>Casablanca, Maroc — mobilité Maroc &amp; International</dd></div>
+        <div class="fact"><dt data-fr="Formation" data-en="Education"></dt><dd data-fr="Master Marketing Digital &amp; Stratégies E-commerce (M2), FSJES UMI Meknès" data-en="M2 Digital Marketing &amp; E-commerce Strategies, FSJES UMI Meknes"></dd></div>
+        <div class="fact"><dt data-fr="Focus" data-en="Focus"></dt><dd data-fr="Growth &amp; Performance · Automatisation IA · Produit web · E-commerce" data-en="Growth &amp; Performance · AI automation · Web product · E-commerce"></dd></div>
+        <div class="fact"><dt data-fr="Langues" data-en="Languages"></dt><dd data-fr="Arabe (maternel) · Français (courant) · Anglais (B2)" data-en="Arabic (native) · French (fluent) · English (B2)"></dd></div>
+        <div class="fact"><dt data-fr="Certifications" data-en="Certifications"></dt><dd data-fr="Google : Search, Display, Shopping, Vidéo, Analytics, DV360" data-en="Google: Search, Display, Shopping, Video, Analytics, DV360"></dd></div>
+        <div class="fact"><dt data-fr="Outils cœur" data-en="Core stack"></dt><dd>n8n · Firebase · Meta / Google Ads · FastAPI · Docker</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section class="sec" id="experience" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-index">02</span>
+      <h2 class="sec-title" data-fr="Expériences professionnelles" data-en="Professional experience"></h2>
+      <span class="sec-note" data-fr="Commercial, marketing digital et gestion de la performance." data-en="Sales, digital marketing and performance management."></span>
+      <span class="rule"></span>
+    </div>
+    <div class="tl">
+      <article class="tl-row reveal">
+        <div class="tl-time" data-fr="Juil.–Sept. 2026" data-en="Jul–Sep 2026"></div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="Stagiaire Marketing Digital" data-en="Digital Marketing Intern"></h3>
+          <div class="org">DynaTeam — agence digitale, Rabat · produit LOCAPP (SaaS location de voitures)</div>
+          <ul>
+            <li data-fr="Définition et exécution de la stratégie marketing et du plan d'acquisition omnicanal du SaaS." data-en="Defined and executed the marketing strategy and omnichannel acquisition plan for the SaaS."></li>
+            <li data-fr="Gestion des réseaux sociaux, création de contenu et coordination du calendrier éditorial digital." data-en="Managed social accounts, created content and coordinated the editorial calendar."></li>
+            <li data-fr="Pilotage des campagnes paid media, suivi des KPIs, reporting de conversion et optimisation continue du ROI." data-en="Ran paid media campaigns, tracked KPIs, reported conversion and continuously optimized ROI."></li>
+          </ul>
+          <div class="tags"><span class="tag dark">Stratégie digitale</span><span class="tag dark">Paid social</span><span class="tag dark">Contenu</span><span class="tag dark">KPI / ROI</span><span class="tag dark">SaaS B2B</span></div>
+        </div>
+      </article>
+      <article class="tl-row reveal">
+        <div class="tl-time" data-fr="Mars–Juin 2024" data-en="Mar–Jun 2024"></div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="Stagiaire Commercial Automobile" data-en="Automotive Sales Intern"></h3>
+          <div class="org">Auto Hall — Meknès</div>
+          <ul>
+            <li data-fr="Accueil et gestion du showroom, prospection téléphonique : plus de 10 prospects qualifiés par jour." data-en="Showroom reception and phone prospecting: 10+ qualified leads per day."></li>
+            <li data-fr="Suivi du pipeline commercial sur Odoo et HubSpot : 13 ventes fermes et plus de 20 devis émis." data-en="Managed the sales pipeline in Odoo and HubSpot: 13 closed sales and 20+ quotes issued."></li>
+            <li data-fr="Reporting hebdomadaire des indicateurs de performance commerciale sur Excel (tableaux croisés dynamiques)." data-en="Weekly sales performance reporting in Excel with pivot tables."></li>
+          </ul>
+          <div class="tags"><span class="tag dark">CRM Odoo / HubSpot</span><span class="tag dark">Prospection</span><span class="tag dark">Excel avancé</span><span class="tag dark">Force de vente</span></div>
+        </div>
+      </article>
+      <article class="tl-row reveal">
+        <div class="tl-time">2023</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="Stagiaire Commercial" data-en="Sales Intern"></h3>
+          <div class="org">Azrou Sani — matériaux de construction, Azrou</div>
+          <ul>
+            <li data-fr="Conseil technique B2B / B2C, établissement de devis et gestion des bons de commande sur Odoo." data-en="B2B / B2C technical advice, quotations and order tracking in Odoo."></li>
+            <li data-fr="Optimisation du cycle de relance client pour accélérer les délais de conversion." data-en="Optimized the follow-up cycle to shorten conversion times."></li>
+          </ul>
+          <div class="tags"><span class="tag dark">B2B / B2C</span><span class="tag dark">Odoo</span><span class="tag dark">Relation client</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- @EXP-DONE -->
+<section class="sec" id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-index">03</span>
+      <h2 class="sec-title" data-fr="Projets &amp; réalisations" data-en="Projects &amp; work"></h2>
+      <span class="sec-note" data-fr="Produits web, automations IA, e-commerce et campagnes paid media." data-en="Web products, AI automations, e-commerce and paid media campaigns."></span>
+      <span class="rule"></span>
+    </div>
+
+    <!-- Feature: Mon Rendez-vous -->
+    <article class="proj-feature reveal">
+      <div class="pf-copy">
+        <div class="pf-kicker" data-fr="PROJET PHARE — WEB + MOBILE" data-en="FLAGSHIP PROJECT — WEB + MOBILE"></div>
+        <h3>Mon Rendez-vous</h3>
+        <p data-fr="Plateforme marocaine de réservation de rendez-vous entre clients et prestataires de services, déclinée en application Android. Trois rôles — client, prestataire, administrateur — avec réservation synchronisée en temps réel, transactions anti-double-réservation et règles de sécurité Firestore par rôle." data-en="A Moroccan booking platform connecting customers and service providers, packaged as an Android app. Three roles — customer, provider, admin — with real-time synchronized bookings, atomic no-double-booking transactions and role-based Firestore security rules."></p>
+        <div class="tags">
+          <span class="tag">Firebase Auth</span><span class="tag">Cloud Firestore</span><span class="tag">Hosting</span>
+          <span class="tag">JavaScript SPA</span><span class="tag">Cloudflare Worker + Brevo</span><span class="tag">Capacitor / Ionic</span><span class="tag">Node.js tests</span>
+        </div>
+        <p class="pf-note" data-fr="Architecture : écritures Firestore transactionnelles et atomiques, règles de sécurité par rôle (client, prestataire, admin), Worker Cloudflare + Brevo pour les emails de rappel, build Android Capacitor / Ionic et interface web responsive, fuseau Africa/Casablanca." data-en="Architecture: atomic transactional Firestore writes, role-based security rules (customer, provider, admin), Cloudflare Worker + Brevo reminder emails, Capacitor / Ionic Android build and responsive web UI, Africa/Casablanca timezone."></p>
+        <div class="pf-stats">
+          <div><b>3</b><span data-fr="rôles : client, prestataire, admin" data-en="roles: customer, provider, admin"></span></div>
+          <div><b>47</b><span data-fr="tests automatisés (Firestore + interface)" data-en="automated tests (Firestore + UI)"></span></div>
+          <div><b>149</b><span data-fr="DH/mois — pack Standard" data-en="DH/month — Standard plan"></span></div>
+        </div>
+        <a class="proj-link" style="color:var(--saffron)" href="https://mon-rendez-vous-9d4c4.web.app" target="_blank" rel="noopener">
+          <span data-fr="Voir la version déployée" data-en="Open deployed version"></span>
+          <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <div class="pf-visual" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-bar"><span>9:41</span><span>Mon RDV</span></div>
+          <div class="phone-screen">
+            <h4 data-fr="Mes rendez-vous" data-en="My bookings"></h4>
+            <div class="ps-row"><span data-fr="Consultation · 30 min" data-en="Consultation · 30 min"></span><span class="st" data-fr="Confirmé" data-en="Confirmed"></span></div>
+            <div class="ps-row"><span data-fr="Suivi · 30 min" data-en="Follow-up · 30 min"></span><span class="st" data-fr="En attente" data-en="Pending"></span></div>
+            <div class="ps-slots">
+              <i class="on">9:00</i><i>9:15</i><i>9:30</i>
+              <i class="on">9:45</i><i>10:00</i><i>10:15</i>
+              <i>10:30</i><i>10:45</i><i>11:00</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Rows -->
+    <article class="proj-row reveal">
+      <div class="proj-thumb"><img src="assets/n8n-workflow.png" alt="Workflow n8n, conteneurs Docker et API locale du projet AI Content Factory"></div>
+      <div>
+        <h3 data-fr="AI Content Factory — automatisation IA locale" data-en="AI Content Factory — local AI automation"></h3>
+        <p data-fr="Projet de R&amp;D : orchestration n8n sous Docker, LLM local Qwen3:8b (Ollama), API Python / FastAPI exposée, enchaînements automatisés et contrôle qualité par boucles de validation. Mémo technique rédigé en français et en anglais, avec benchmarks reproductibles et logique d'auto-correction." data-en="R&amp;D project: n8n orchestration on Docker, local Qwen3:8b LLM (Ollama), exposed Python / FastAPI API, automated chains with quality-control validation loops. Technical memo written in French and English, with reproducible benchmarks and self-correction logic."></p>
+        <div class="tags"><span class="tag dark">n8n</span><span class="tag dark">Ollama / Qwen3</span><span class="tag dark">FastAPI</span><span class="tag dark">Python</span><span class="tag dark">PyTorch CUDA</span><span class="tag dark">Docker</span><span class="tag dark">Webhooks</span><span class="tag dark">Node.js</span><span class="tag dark">Git</span></div>
+      </div>
+      <div class="proj-meta"><b>V1</b><span data-fr="preuve de concept reproductible" data-en="reproducible proof of concept"></span></div>
+    </article>
+
+    <article class="proj-row reveal no-thumb">
+      <div>
+        <h3 data-fr="E-commerce &amp; Media Buying — Shopify + Meta Ads" data-en="E-commerce &amp; Media Buying — Shopify + Meta Ads"></h3>
+        <p data-fr="Conception d'une boutique en ligne optimisée et scale de campagnes publicitaires ciblées : structure du store, audience, créatives et suivi des performances." data-en="Designed an optimized online store and scaled targeted ad campaigns: store structure, audiences, creatives and performance tracking."></p>
+        <div class="tags"><span class="tag dark">Shopify</span><span class="tag dark">Meta Ads</span><span class="tag dark">Créatives</span><span class="tag dark">Suivi des conversions</span></div>
+      </div>
+      <div class="proj-meta"><b>100k</b><span data-fr="impressions · 10 commandes enregistrées" data-en="impressions · 10 orders recorded"></span></div>
+    </article>
+
+    <article class="proj-row reveal no-thumb">
+      <div>
+        <h3 data-fr="Sites vitrines WordPress — projets académiques" data-en="WordPress showcase sites — academic projects"></h3>
+        <p data-fr="Trois sites vitrines : architecture UX/UI, optimisation SEO technique et gestion de contenu, en cohérence avec les fiches métiers et les objectifs d'acquisition." data-en="Three showcase sites: UX/UI architecture, technical SEO optimization and content management, aligned with business profiles and acquisition goals."></p>
+        <div class="tags"><span class="tag dark">WordPress</span><span class="tag dark">UX / UI</span><span class="tag dark">SEO technique</span><span class="tag dark">Gestion de contenu</span></div>
+      </div>
+      <div class="proj-meta"><b>3</b><span data-fr="sites livrés en projet" data-en="sites delivered in projects"></span></div>
+    </article>
+
+  </div>
+</section>
+<!-- @PROJ-DONE -->
+<!-- ===== Skills ===== -->
+<section class="sec" id="competences" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-index">04</span>
+      <h2 class="sec-title" data-fr="Compétences &amp; outils" data-en="Skills &amp; tools"></h2>
+      <span class="sec-note" data-fr="Du brief marketing au produit web automatisé, en passant par le code." data-en="From marketing brief to the automated web product, through code."></span>
+      <span class="rule"></span>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-group reveal">
+        <h3 data-fr="Acquisition &amp; performance data" data-en="Acquisition &amp; performance data"></h3>
+        <div class="tags">
+          <span class="tag dark">Meta Ads</span><span class="tag dark">Google Ads — Search</span><span class="tag dark">Display</span><span class="tag dark">Shopping</span><span class="tag dark">Vidéo</span><span class="tag dark">DV360</span><span class="tag dark">SEO</span><span class="tag dark">GA4</span><span class="tag dark">Shopify</span><span class="tag dark">HubSpot CRM</span><span class="tag dark">Odoo</span><span class="tag dark">Excel avancé — TCD</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3 data-fr="Développement &amp; automatisation" data-en="Development &amp; automation"></h3>
+        <div class="tags">
+          <span class="tag dark">JavaScript</span><span class="tag dark">HTML / CSS</span><span class="tag dark">Python</span><span class="tag dark">FastAPI</span><span class="tag dark">Firebase Auth</span><span class="tag dark">Firestore</span><span class="tag dark">Hosting</span><span class="tag dark">Node.js</span><span class="tag dark">n8n</span><span class="tag dark">Docker</span><span class="tag dark">Webhooks / API</span><span class="tag dark">Ollama / LLMs locaux</span><span class="tag dark">Git</span><span class="tag dark">Supabase</span><span class="tag dark">Capacitor</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3 data-fr="Automatisation &amp; systèmes" data-en="Automation &amp; systems"></h3>
+        <div class="tags">
+          <span class="tag dark">n8n</span><span class="tag dark">Cloudflare Worker</span><span class="tag dark">Brevo (emails)</span><span class="tag dark">Firestore rules</span><span class="tag dark">Webhooks</span><span class="tag dark">Jobs planifiés</span><span class="tag dark">Tests Node.js</span><span class="tag dark">CI basique</span><span class="tag dark">Ollama / Qwen3</span><span class="tag dark">Docker Compose</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3 data-fr="Certifications Google" data-en="Google certifications"></h3>
+        <div class="certs" style="margin-top:0">
+          <span class="cert"><b data-fr="Search" data-en="Search"></b> <span data-fr="Ads" data-en="Ads"></span></span>
+          <span class="cert"><b data-fr="Display" data-en="Display"></b></span>
+          <span class="cert"><b data-fr="Shopping" data-en="Shopping"></b></span>
+          <span class="cert"><b data-fr="Vidéo" data-en="Video"></b></span>
+          <span class="cert"><b>GA4</b> <span data-fr="Analytics" data-en="Analytics"></span></span>
+          <span class="cert"><b>DV360</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Education ===== -->
+<section class="sec" id="formation" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-index">05</span>
+      <h2 class="sec-title" data-fr="Formation" data-en="Education"></h2>
+      <span class="rule"></span>
+    </div>
+    <div class="tl">
+      <article class="tl-row reveal">
+        <div class="tl-time">2025 — 2027</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="Master Marketing Digital &amp; Stratégies E-commerce (M2)" data-en="M2 Digital Marketing &amp; E-commerce Strategies"></h3>
+          <div class="org">FSJES, Université Moulay Ismail — Meknès</div>
+          <p style="color:var(--ink-soft);font-size:14px" data-fr="Spécialisation en stratégies d'acquisition, performance growth et e-commerce." data-en="Focus on acquisition strategies, growth performance and e-commerce."></p>
+        </div>
+      </article>
+      <article class="tl-row reveal">
+        <div class="tl-time">2024 — 2025</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="Licence d'Excellence en Marketing Digital" data-en="Excellence Bachelor in Digital Marketing"></h3>
+          <div class="org">FSJES, Université Moulay Ismail — Meknès</div>
+        </div>
+      </article>
+      <article class="tl-row reveal">
+        <div class="tl-time">2022 — 2024</div>
+        <div class="tl-axis"><span class="tl-dot"></span></div>
+        <div class="tl-body">
+          <h3 data-fr="DUT Techniques de Communication et de Commercialisation" data-en="University Diploma in Marketing &amp; Commercial Techniques"></h3>
+          <div class="org">EST — Khénifra</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- @SKILLS-DONE -->
+<!-- ===== Contact ===== -->
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="color:var(--paper)">
+      <span class="sec-index">06</span>
+      <h2 class="sec-title" data-fr="Contact" data-en="Contact"></h2>
+      <span class="rule" style="background:rgba(242,240,233,.25)"></span>
+    </div>
+    <h2 class="reveal" data-fr="Un projet marketing, une automatisation, un produit web ?" data-en="A marketing project, an automation, a web product?"></h2>
+    <p class="lead reveal" data-fr="Missions freelance et collaborations en marketing digital, IA, automatisation et développement web." data-en="Freelance missions and collaborations in digital marketing, AI, automation and web development."></p>
+    <div class="foot-links reveal">
+      <a class="foot-link" href="mailto:yelmontassir04@gmail.com">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        <b>Email</b><span>yelmontassir04@gmail.com</span>
+      </a>
+      <a class="foot-link" href="tel:+212687102859">
+        <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <b data-fr="Téléphone / WhatsApp" data-en="Phone / WhatsApp"></b><span>+212 6 87 10 28 59</span>
+      </a>
+      <a class="foot-link" href="https://www.linkedin.com/in/youssef-el-montassir-ab5145276" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14H.2V8zm7.6 0h4.4v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V22h-4.6v-6.6c0-1.6 0-3.6-2.2-3.6s-2.6 1.7-2.6 3.5V22H7.8V8z"/></svg>
+        <b>LinkedIn</b><span>linkedin.com/in/youssef-el-montassir-ab5145276</span>
+      </a>
+      <div class="foot-link">
+        <svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <b data-fr="Localisation" data-en="Location"></b><span data-fr="Casablanca, Maroc — mobilité Maroc &amp; International" data-en="Casablanca, Morocco — mobility Morocco &amp; International"></span>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Youssef El Montassir</span>
+      <span data-fr="Portfolio conçu et développé à Casablanca — Français / English" data-en="Portfolio designed and built in Casablanca — Français / English"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var toggle = document.getElementById('langToggle');
+  function apply(lang){
+    root.lang = lang;
+    document.querySelectorAll('[data-fr]').forEach(function(el){
+      el.textContent = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    toggle.textContent = lang === 'fr' ? 'EN' : 'FR';
+    try { localStorage.setItem('ye-lang', lang); } catch(e){}
+  }
+  var saved = 'fr';
+  try { saved = localStorage.getItem('ye-lang') || 'fr'; } catch(e){}
+  apply(saved);
+  toggle.addEventListener('click', function(){
+    apply(root.lang === 'fr' ? 'en' : 'fr');
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }, 1400);
+
+})();
+</script>
+<!-- @JS-DONE -->
+</body>
+</html>
