@@ -1,2 +1,6 @@
 gh_device_auth.py
 *.tmp
+*.log
+.preview/
+_tools/
+_backup-v1-site/
